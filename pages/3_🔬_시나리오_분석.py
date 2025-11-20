@@ -593,7 +593,7 @@ elif csa_score < 30:
     level_color = "#3498db"
     level_bg = "linear-gradient(135deg, #89c4f4 0%, #3498db 100%)"
     level_emoji = "🔵"
-elif csa_score < 60:
+elif csa_score <= 60:
     level_name = "중급 단계"
     level_color = "#f39c12"
     level_bg = "linear-gradient(135deg, #f8c471 0%, #f39c12 100%)"
