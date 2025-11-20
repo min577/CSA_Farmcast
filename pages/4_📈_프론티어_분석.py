@@ -202,11 +202,11 @@ analysis_type = st.sidebar.radio(
 if analysis_type == "완숙토마토만 (13개)":
     df_filtered = get_type_specific_data(df_all, "완숙")
     frontier_title = "완숙토마토 농가"
-    analysis_note = "13개 농가 중 8개 농가가 효율적 (61.5%)"
+    analysis_note = "13개 농가 중 9개 농가가 효율적 (69.2%)"
 elif analysis_type == "방울토마토만 (6개)":
     df_filtered = get_type_specific_data(df_all, "방울")
     frontier_title = "방울토마토 농가"
-    analysis_note = "6개 농가 중 4개 농가가 효율적 (66.6%)"
+    analysis_note = "6개 농가 중 5개 농가가 효율적 (83.3%)"
 else:
     df_filtered = get_type_specific_data(df_all, "all")
     frontier_title = "전체 농가"
@@ -328,6 +328,9 @@ fig.add_trace(go.Scatter(
 # 비효율적 농가 (원)
 inefficient_farms = df_filtered[df_filtered['efficiency_status'] == 'Inefficient']
 if len(inefficient_farms) > 0:
+    # 개선여력 미리 계산
+    improvement_potential = [(1 - eff) * 100 for eff in inefficient_farms['vrs_efficiency']]
+    
     fig.add_trace(go.Scatter(
         x=inefficient_farms['input_index'],
         y=inefficient_farms['output_index'],
@@ -340,11 +343,17 @@ if len(inefficient_farms) > 0:
         ),
         name='비효율적 농가 (VRS<1.0)',
         text=inefficient_farms['farm_id'],
-        customdata=inefficient_farms[['farm_type', 'vrs_efficiency', 'sales', 'total_cost']],
+        customdata=np.column_stack([
+            inefficient_farms['farm_type'].values,
+            inefficient_farms['vrs_efficiency'].values,
+            inefficient_farms['sales'].values,
+            inefficient_farms['total_cost'].values,
+            improvement_potential
+        ]),
         hovertemplate='<b>농가 %{text}</b><br>' +
                      '유형: %{customdata[0]}<br>' +
                      'VRS 효율성: %{customdata[1]:.4f}<br>' +
-                     '개선여력: ' + inefficient_farms.apply(lambda x: f"{(1-x['vrs_efficiency'])*100:.1f}%", axis=1).values + '<br>' +
+                     '개선여력: %{customdata[4]:.1f}%<br>' +
                      '조수입: %{customdata[2]:,.0f}원<br>' +
                      '총비용: %{customdata[3]:,.0f}원<extra></extra>'
     ))
