@@ -1,4 +1,5 @@
-# 연구의의 및 정책 제언
+# 연구의의 및 정책 제언 (개선본)
+# 정책 3 부분 개선: 3가지 해결책 제시 + 그린카드 제도 강조
 
 import streamlit as st
 import pandas as pd
@@ -151,6 +152,30 @@ st.markdown("""
     text-align: center;
     margin: 10px 0;
 }
+
+/* 그린카드 강조 스타일 */
+.greencard-highlight {
+    background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+    border: 3px solid #27ae60;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);
+}
+
+.greencard-highlight h5 {
+    color: #27ae60;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.greencard-benefit {
+    background: white;
+    border-left: 4px solid #27ae60;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 10px 0;
+}
 </style>
 """, unsafe_allow_html=True)
 
@@ -253,8 +278,9 @@ with col3:
         시장에서 CSA 저탄소 인증 농산물에 대한 인지도가 낮아 가격 차별화 불가 (58.6%)</p>
         <hr>
         <p><b>해결 방향</b><br>
-        • 저탄소 농축산물 인증제 존재하나 소비자 인식 부족<br>
-        • 그린카드 제도 활용한 구매 가격 15% 포인트 지급</p>
+        • 공공급식 우선 납품제<br>
+        • 탄소크레딧 판매 연계<br>
+        • <b style="color: #27ae60;">그린카드 제도 확대 ★</b></p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -419,21 +445,30 @@ st.markdown("""
 st.markdown("---")
 
 # ============================================================================
-# 정책 3: 가격 차별화 미흡 해결
+# 정책 3: 가격 차별화 미흡 해결 (3가지 정책 + 그린카드 강조)
 # ============================================================================
 
 st.markdown("""
 <div class="policy-card">
-    <h3>🏷️ 정책 3: 공공·학교 급식 CSA 인증 우선 납품제 & 소비자 가격 부담 완화</h3>
+    <h3>🏷️ 정책 3: 3중 가격 차별화 전략 - 공공납품 + 탄소크레딧 + 그린카드 ⭐</h3>
 </div>
 """, unsafe_allow_html=True)
 
-policy3_col1, policy3_col2 = st.columns([1, 1])
+# 3가지 정책 소개
+st.info("""
+**가격 차별화 3대 축:**
+1️⃣ **B2B 전략** → 공공·학교 급식 CSA 인증 우선 납품제  
+2️⃣ **환경가치 전략** → 탄소 크레딧 판매 연계 프리미엄화  
+3️⃣ **B2C 전략** → 그린카드 제도를 통한 소비자 가격 부담 완화 ⭐ **(핵심)**
+""")
+
+# 3개 컬럼으로 배치
+policy3_col1, policy3_col2, policy3_col3 = st.columns([1, 1, 1.3])
 
 with policy3_col1:
     st.markdown("""
     <div class="policy-detail">
-        <h5>🏫 3-1. 학교·공공급식 CSA 인증 농산물 의무구매제</h5>
+        <h5>🏫 3-1. 학교·공공급식 CSA 인증 우선 납품제</h5>
         <p><b>정책 주체:</b> 교육부, 지자체 교육청</p>
         <p><b>내용:</b></p>
         <ul>
@@ -448,47 +483,114 @@ with policy3_col1:
                 <ul>
                     <li>중앙부처, 지자체, 공기업 구내식당</li>
                     <li>CSA 인증 농산물 비중 40% 이상</li>
-                    <li>우수기관 인센티브 제공</li>
                 </ul>
             </li>
         </ul>
-        <p><b>기대효과:</b> 안정적 판로 확보 → 프리미엄 가격 실현</p>
+        <p><b>기대효과:</b> 안정적 판로 확보 → <b style="color: #e74c3c;">B2B 프리미엄 가격 실현</b></p>
     </div>
     """, unsafe_allow_html=True)
 
 with policy3_col2:
     st.markdown("""
     <div class="policy-detail">
-        <h5>💳 3-2. 그린카드 제도 → 소비자 가격 부담 완화</h5>
-        <p><b>정책 주체:</b> 환경부, 금융위원회</p>
+        <h5>🌍 3-2. 탄소 크레딧 판매 연계 프리미엄화</h5>
+        <p><b>정책 주체:</b> 환경부, 농림축산식품부</p>
         <p><b>내용:</b></p>
         <ul>
-            <li><b>그린카드 CSA 농산물 구매 시 포인트 적립</b>
+            <li><b>CSA 농가 탄소 감축량 크레딧 인정</b>
                 <ul>
-                    <li>현재: 친환경 제품 구매 시 최대 3,000원/월 소득공제</li>
-                    <li><b style="color: #e74c3c;">확대안: CSA 인증 농산물 구매 금액의 15% 포인트 적립</b></li>
-                    <li>예: 2만원 구매 → 3,000원 포인트 (다음 구매 시 사용)</li>
+                    <li>온실가스 배출권 거래제 연계</li>
+                    <li>10a당 연간 0.5톤 CO₂ 감축 인증</li>
+                    <li><b style="color: #e74c3c;">크레딧 가격: 톤당 2만원</b><br>(연간 10만원/10a)</li>
                 </ul>
             </li>
-            <li><b>대형마트·온라인몰 CSA 농산물 별도 코너 운영 지원</b>
+            <li><b>기업 ESG 구매 프로그램</b>
+                <ul>
+                    <li>대기업 CSR 활동으로 CSA 농산물 구매 유도</li>
+                    <li>탄소중립 달성 실적 인정</li>
+                </ul>
+            </li>
+        </ul>
+        <p><b>기대효과:</b> <b style="color: #e74c3c;">환경가치 금전화</b> → 농가 추가 수익 창출</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with policy3_col3:
+    st.markdown("""
+    <div class="greencard-highlight">
+        <h5>💳 3-3. 그린카드 제도 확대 ⭐ (핵심 정책)</h5>
+        <p><b>정책 주체:</b> 환경부, 금융위원회</p>
+        <p><b>현황:</b> 기존 친환경 제품 구매 시 최대 3,000원/월 소득공제</p>
+        
+        <div class="greencard-benefit">
+            <p><b style="color: #e74c3c; font-size: 1.2rem;">🎯 확대안: CSA 인증 농산물 구매 금액의 15% 포인트 즉시 적립</b></p>
+            <p>• 2만원 구매 → <b style="color: #27ae60;">3,000원 포인트</b> (다음 구매 시 사용)<br>
+            • 4만원 구매 → <b style="color: #27ae60;">6,000원 포인트</b><br>
+            • <b>월 한도 없음</b> (기존 3,000원 한도 폐지)</p>
+        </div>
+        
+        <p><b>세부 내용:</b></p>
+        <ul>
+            <li><b>대형마트·온라인몰 CSA 농산물 별도 코너 운영</b>
                 <ul>
                     <li>CSA 인증마크 부착 의무화</li>
                     <li>매장 내 홍보물 제작 지원</li>
                     <li>온라인 검색 필터에 "CSA 인증" 추가</li>
+                    <li>그린카드 결제 시 자동 포인트 적립</li>
+                </ul>
+            </li>
+            <li><b>소비자 캠페인 "15% 돌려받고 지구도 살리고"</b>
+                <ul>
+                    <li>TV·온라인 광고 집행 (연간 10억원)</li>
+                    <li>그린카드 발급 캠페인 (목표 100만장)</li>
+                    <li>CSA 인증 농산물 인지도 제고</li>
                 </ul>
             </li>
         </ul>
-        <p><b>기대효과:</b> 소비자 인식 제고 + 구매 유인 → 시장 차별화 성공</p>
+        <p><b style="color: #27ae60; font-size: 1.15rem;">💡 기대효과: 소비자 가격 부담 15% 완화 → B2C 시장 활성화 → 농가 판로 확대</b></p>
+    </div>
+    """, unsafe_allow_html=True)
+
+# 그린카드 제도 효과 추가 설명
+st.markdown("---")
+st.markdown("### 💳 그린카드 제도가 핵심인 이유")
+
+greencard_col1, greencard_col2, greencard_col3 = st.columns(3)
+
+with greencard_col1:
+    st.markdown("""
+    <div class="success-metric">
+        <p style="font-size: 0.9rem; color: #7f8c8d; margin-bottom: 5px;">소비자 실질 부담</p>
+        <p class="highlight-number" style="color: #27ae60;">-15%</p>
+        <p style="font-size: 0.9rem; color: #2c3e50;">CSA 농산물 가격 체감 하락</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with greencard_col2:
+    st.markdown("""
+    <div class="success-metric">
+        <p style="font-size: 0.9rem; color: #7f8c8d; margin-bottom: 5px;">예상 구매 증가</p>
+        <p class="highlight-number" style="color: #27ae60;">+35%</p>
+        <p style="font-size: 0.9rem; color: #2c3e50;">소비자 구매 유인 효과</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with greencard_col3:
+    st.markdown("""
+    <div class="success-metric">
+        <p style="font-size: 0.9rem; color: #7f8c8d; margin-bottom: 5px;">그린카드 발급 목표</p>
+        <p class="highlight-number" style="color: #27ae60;">100만장</p>
+        <p style="font-size: 0.9rem; color: #2c3e50;">2027년까지</p>
     </div>
     """, unsafe_allow_html=True)
 
 st.markdown("""
 <div class="implementation-box">
-    <h4>💼 실행 방안</h4>
-    <p><b>단계 1 (2025년):</b> 학교급식법 개정 추진 → 시범 교육청 3곳 선정</p>
-    <p><b>단계 2 (2026년):</b> 전국 확대 시행 → 그린카드 CSA 포인트 제도 시작</p>
-    <p><b>단계 3 (2027년~):</b> 공공급식 70% 달성 → 민간 유통망 확대</p>
-    <p><b>예산:</b> 연간 50억원 (급식 차액 지원 30억 + 그린카드 포인트 지원 20억)</p>
+    <h4>💼 정책 3 통합 실행 방안</h4>
+    <p><b>단계 1 (2025년):</b> 학교급식법 개정 추진 → 시범 교육청 3곳 + 탄소크레딧 제도 시범사업</p>
+    <p><b>단계 2 (2026년):</b> 전국 학교급식 30% 달성 → <b style="color: #27ae60;">그린카드 CSA 포인트 제도 전면 시행 ⭐</b></p>
+    <p><b>단계 3 (2027년~):</b> 공공급식 50% 달성 → 민간 유통망 확대 → 그린카드 100만장 발급</p>
+    <p><b>예산:</b> 연간 65억원 (급식 차액 지원 25억 + 탄소크레딧 지원 10억 + <b style="color: #27ae60;">그린카드 포인트 지원 30억</b>)</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -516,9 +618,9 @@ roadmap_data = {
         '누적 2,000개 농가 지원\n자립 운영 단계'
     ],
     '시장차별화': [
-        '학교급식법 개정\n시범 교육청 3곳',
-        '전국 학교급식 30%\n그린카드 포인트 시행',
-        '공공급식 50% 달성\n민간 유통망 확대',
+        '학교급식법 개정\n탄소크레딧 시범',
+        '공공급식 30%\n그린카드 전면 시행',
+        '공공급식 50%\n그린카드 100만장',
         '70% 달성 목표\nCSA 브랜드 확립'
     ]
 }
@@ -527,7 +629,7 @@ roadmap_df = pd.DataFrame(roadmap_data)
 
 fig_roadmap = go.Figure()
 
-colors = ['#3498db', '#e74c3c', '#f39c12']
+colors = ['#3498db', '#e74c3c', '#27ae60']
 y_positions = [3, 2, 1]
 
 for i, col in enumerate(['기술신뢰', '비용지원', '시장차별화']):
@@ -547,7 +649,7 @@ fig_roadmap.update_layout(
     xaxis=dict(title="연도", showgrid=False),
     yaxis=dict(
         title="정책 영역",
-        ticktext=['시장 차별화', '비용 지원', '기술 신뢰'],
+        ticktext=['시장 차별화 (그린카드 핵심)', '비용 지원', '기술 신뢰'],
         tickvals=[1, 2, 3],
         showgrid=False
     ),
@@ -639,7 +741,7 @@ with col1:
         <ul>
             <li>농식품부: CSA 기술 지원 총괄</li>
             <li>교육부: 학교급식 제도 개선</li>
-            <li>환경부: 그린카드 제도 연계</li>
+            <li><b style="color: #27ae60;">환경부: 그린카드 제도 연계 (핵심)</b></li>
             <li>지자체: 현장 실행 및 모니터링</li>
         </ul>
     </div>
@@ -656,9 +758,10 @@ with col2:
                     <li>평균 효율성 개선률</li>
                     <li>투자 회수율</li>
                     <li>온실가스 감축량</li>
+                    <li><b style="color: #27ae60;">그린카드 발급 및 사용률</b></li>
                 </ul>
             </li>
-            <li><b>농가 만족도 조사</b>
+            <li><b>농가·소비자 만족도 조사</b>
                 <ul>
                     <li>연 2회 설문조사</li>
                     <li>애로사항 즉각 해결</li>
@@ -673,6 +776,7 @@ with col2:
             <li>CSA 기술 효과 장기 추적 연구</li>
             <li>작목별·지역별 최적 기술 조합 연구</li>
             <li>신기술 도입에 따른 효율성 변화 분석</li>
+            <li><b style="color: #27ae60;">그린카드 제도 효과 분석 연구</b></li>
         </ul>
     </div>
     """, unsafe_allow_html=True)
@@ -694,18 +798,21 @@ st.success("""
 - ROI 17.7% 경제성 검증
 
 **✅ 현장 중심 접근**
-- 농가의 실제 애로사항(기술신뢰·비용·시장) 해결
+- 농가의 실제 애로사항(기술신뢰·비용·시장) 3대 장벽 해결
 - 단계적·점진적 도입 전략
 - 실패 리스크 최소화
 
 **✅ 통합적 정책 설계**
 - 공급 측면(농가 지원) + 수요 측면(소비자 유인)
+- **특히 그린카드 제도를 통한 소비자-농가 Win-Win 구조 ⭐**
 - 단기 지원 + 장기 지속가능성
 - 경제성 + 환경성 동시 달성
 
 ### 🌱 **CSA는 이제 '선택'이 아닌 '필수'입니다**
 
 본 정책들이 실행된다면, 2030년까지 전남을 넘어 전국 스마트팜의 **지속가능한 전환**을 이끌 수 있을 것입니다.
+
+특히 **그린카드 제도**는 소비자가 체감하는 가격 부담을 15% 줄이면서 동시에 농가의 판로를 확대하는 핵심 정책입니다.
 """)
 
 # 푸터
