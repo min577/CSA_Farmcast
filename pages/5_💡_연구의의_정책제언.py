@@ -305,30 +305,37 @@ st.markdown("""
 policy1_col1, policy1_col2 = st.columns([1, 1])
 
 with policy1_col1:
+    # 정책 1-1 강조 박스
     st.markdown("""
-    <div class="policy-detail">
-        <h5>📊 1-1. 스마트팜 실증 데이터 공개 플랫폼 구축</h5>
-        <p><b>정책 주체:</b> 농촌진흥청, 한국농업기술진흥원</p>
-        <p><b>내용:</b></p>
-        <ul>
-            <li><b>전국 스마트팜 효율성 벤치마킹 시스템</b> 구축
-                <ul>
-                    <li>DEA 기반 농가별 효율성 점수 공개</li>
-                    <li>효율적 농가의 기술 구성 및 운영 패턴 DB화</li>
-                    <li>작목별·지역별 맞춤형 효율성 비교</li>
-                </ul>
-            </li>
-            <li><b>CSA 기술 도입 전후 비교 데이터 제공</b>
-                <ul>
-                    <li>실제 농가의 도입 전후 비용·수익 변화</li>
-                    <li>투자 회수 기간 계산기 제공</li>
-                    <li>시나리오별 ROI 시뮬레이터</li>
-                </ul>
-            </li>
-        </ul>
-        <p><b>기대효과:</b> 농가들이 데이터로 직접 확인 → 기술 신뢰도 상승</p>
+    <div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); 
+                border: 3px solid #3498db; border-radius: 15px; padding: 20px; 
+                box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);">
+        <h5 style="color: #2c3e50; font-size: 1.4rem; margin-bottom: 12px;">
+            📊 1-1. 스마트팜 실증 데이터 공개 플랫폼 구축 ⭐
+        </h5>
     </div>
     """, unsafe_allow_html=True)
+    
+    st.markdown("**정책 주체:** 농촌진흥청, 한국농업기술진흥원")
+    
+    # 핵심 내용 강조
+    st.info("""
+    🎯 **핵심: 전국 스마트팜 효율성 벤치마킹 시스템 구축**
+    
+    • DEA 기반 농가별 효율성 점수 공개  
+    • 효율적 농가의 기술 구성 및 운영 패턴 DB화  
+    • 작목별·지역별 맞춤형 효율성 비교
+    """)
+    
+    st.markdown("**세부 내용:**")
+    st.markdown("""
+    **1) CSA 기술 도입 전후 비교 데이터 제공**
+    - 실제 농가의 도입 전후 비용·수익 변화
+    - 투자 회수 기간 계산기 제공
+    - 시나리오별 ROI 시뮬레이터
+    """)
+    
+    st.success("💡 **기대효과:** 농가들이 데이터로 직접 확인 → 기술 신뢰도 상승")
 
 with policy1_col2:
     st.markdown("""
@@ -381,30 +388,37 @@ st.markdown("""
 policy2_col1, policy2_col2 = st.columns([1, 1])
 
 with policy2_col1:
+    # 정책 2-1 강조 박스
     st.markdown("""
-    <div class="policy-detail">
-        <h5>📈 2-1. "Sweet Spot 60%" 맞춤형 지원 패키지</h5>
-        <p><b>정책 주체:</b> 농림축산식품부, 농림수산식품교육문화정보원</p>
-        <p><b>내용:</b></p>
-        <ul>
-            <li><b>단계별 CSA 도입 지원금 차등화</b>
-                <ul>
-                    <li>30% 수준(기초형): 지원금 50% (최대 540만원)</li>
-                    <li><b style="color: #e74c3c;">60% 수준(중급형): 지원금 70% ★ (최대 1,540만원)</b></li>
-                    <li>100% 수준(고급형): 지원금 50% (최대 1,100만원)</li>
-                </ul>
-            </li>
-            <li><b>ROI 17.7% 보장 CSA 패키지 개발</b>
-                <ul>
-                    <li>스마트 센서 + 정밀시비 + 생물학적 방제 조합</li>
-                    <li>10a당 2,200만원 투자 → 3년 후 3,900만원 회수</li>
-                    <li>표준 설치 매뉴얼 및 A/S 보증</li>
-                </ul>
-            </li>
-        </ul>
-        <p><b>기대효과:</b> 경제성 높은 60% 도입 집중 지원 → 참여율 상승</p>
+    <div style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); 
+                border: 3px solid #e74c3c; border-radius: 15px; padding: 20px; 
+                box-shadow: 0 6px 15px rgba(231, 76, 60, 0.4);">
+        <h5 style="color: #c0392b; font-size: 1.4rem; margin-bottom: 12px;">
+            📈 2-1. "Sweet Spot 60%" 맞춤형 지원 패키지 ⭐
+        </h5>
     </div>
     """, unsafe_allow_html=True)
+    
+    st.markdown("**정책 주체:** 농림축산식품부, 농림수산식품교육문화정보원")
+    
+    # 핵심 내용 강조
+    st.warning("""
+    🎯 **핵심: 단계별 CSA 도입 지원금 차등화**
+    
+    • 30% 수준(기초형): 지원금 50% (최대 540만원)  
+    • **60% 수준(중급형): 지원금 70% ★ (최대 1,540만원)**  
+    • 100% 수준(고급형): 지원금 50% (최대 1,100만원)
+    """)
+    
+    st.markdown("**세부 내용:**")
+    st.markdown("""
+    **1) ROI 17.7% 보장 CSA 패키지 개발**
+    - 스마트 센서 + 정밀시비 + 생물학적 방제 조합
+    - 10a당 2,200만원 투자 → 3년 후 3,900만원 회수
+    - 표준 설치 매뉴얼 및 A/S 보증
+    """)
+    
+    st.success("💡 **기대효과:** 경제성 높은 60% 도입 집중 지원 → 참여율 상승")
 
 with policy2_col2:
     st.markdown("""
@@ -450,106 +464,125 @@ st.markdown("---")
 
 st.markdown("""
 <div class="policy-card">
-    <h3>🏷️ 정책 3: 3중 가격 차별화 전략 - 공공납품 + 탄소크레딧 + 그린카드 ⭐</h3>
+    <h3>🏷️ 정책 3: 3중 가격 차별화 전략 - 공공납품 ⭐ + 탄소크레딧 ⭐ + 그린카드 ⭐</h3>
 </div>
 """, unsafe_allow_html=True)
 
 # 3가지 정책 소개
 st.info("""
-**가격 차별화 3대 축:**
-1️⃣ **B2B 전략** → 공공·학교 급식 CSA 인증 우선 납품제  
-2️⃣ **환경가치 전략** → 탄소 크레딧 판매 연계 프리미엄화  
-3️⃣ **B2C 전략** → 그린카드 제도를 통한 소비자 가격 부담 완화 ⭐ **(핵심)**
+**가격 차별화 3대 축 (균형있는 정책 조합):**
+
+1️⃣ **B2B 전략** → 공공·학교 급식 CSA 인증 우선 납품제 ⭐  
+2️⃣ **환경가치 전략** → 탄소 크레딧 판매 연계 프리미엄화 ⭐  
+3️⃣ **B2C 전략** → 그린카드 제도를 통한 소비자 가격 부담 완화 ⭐
 """)
 
 # 3개 컬럼으로 배치
 policy3_col1, policy3_col2, policy3_col3 = st.columns([1, 1, 1.3])
 
 with policy3_col1:
+    # 정책 3-1 강조 박스
     st.markdown("""
-    <div class="policy-detail">
-        <h5>🏫 3-1. 학교·공공급식 CSA 인증 우선 납품제</h5>
-        <p><b>정책 주체:</b> 교육부, 지자체 교육청</p>
-        <p><b>내용:</b></p>
-        <ul>
-            <li><b>학교급식 친환경 농산물 구매 기준 강화</b>
-                <ul>
-                    <li>현재: 친환경 인증 우선구매 (의무 아님)</li>
-                    <li><b style="color: #e74c3c;">개정안: 저탄소 CSA 인증 농산물 30% 이상 의무구매</b></li>
-                    <li>2025년 30% → 2027년 50% → 2030년 70% 단계적 확대</li>
-                </ul>
-            </li>
-            <li><b>공공기관 구내식당 CSA 농산물 사용 의무화</b>
-                <ul>
-                    <li>중앙부처, 지자체, 공기업 구내식당</li>
-                    <li>CSA 인증 농산물 비중 40% 이상</li>
-                </ul>
-            </li>
-        </ul>
-        <p><b>기대효과:</b> 안정적 판로 확보 → <b style="color: #e74c3c;">B2B 프리미엄 가격 실현</b></p>
+    <div style="background: linear-gradient(135deg, #fdeb71 0%, #f8d800 100%); 
+                border: 3px solid #f39c12; border-radius: 15px; padding: 20px; 
+                box-shadow: 0 6px 15px rgba(243, 156, 18, 0.4);">
+        <h5 style="color: #d68910; font-size: 1.4rem; margin-bottom: 12px;">
+            🏫 3-1. 학교·공공급식 CSA 인증 우선 납품제 ⭐
+        </h5>
     </div>
     """, unsafe_allow_html=True)
+    
+    st.markdown("**정책 주체:** 교육부, 지자체 교육청")
+    
+    # 핵심 내용 강조
+    st.warning("""
+    🎯 **핵심: 학교급식 친환경 농산물 구매 기준 강화**
+    
+    • 현재: 친환경 인증 우선구매 (의무 아님)  
+    • **개정안: 저탄소 CSA 인증 농산물 30% 이상 의무구매**  
+    • 2025년 30% → 2027년 50% → 2030년 70% 단계적 확대
+    """)
+    
+    st.markdown("**세부 내용:**")
+    st.markdown("""
+    **1) 공공기관 구내식당 CSA 농산물 사용 의무화**
+    - 중앙부처, 지자체, 공기업 구내식당
+    - CSA 인증 농산물 비중 40% 이상
+    """)
+    
+    st.success("💡 **기대효과:** 안정적 판로 확보 → B2B 프리미엄 가격 실현")
 
 with policy3_col2:
+    # 정책 3-2 강조 박스
     st.markdown("""
-    <div class="policy-detail">
-        <h5>🌍 3-2. 탄소 크레딧 판매 연계 프리미엄화</h5>
-        <p><b>정책 주체:</b> 환경부, 농림축산식품부</p>
-        <p><b>내용:</b></p>
-        <ul>
-            <li><b>CSA 농가 탄소 감축량 크레딧 인정</b>
-                <ul>
-                    <li>온실가스 배출권 거래제 연계</li>
-                    <li>10a당 연간 0.5톤 CO₂ 감축 인증</li>
-                    <li><b style="color: #e74c3c;">크레딧 가격: 톤당 2만원</b><br>(연간 10만원/10a)</li>
-                </ul>
-            </li>
-            <li><b>기업 ESG 구매 프로그램</b>
-                <ul>
-                    <li>대기업 CSR 활동으로 CSA 농산물 구매 유도</li>
-                    <li>탄소중립 달성 실적 인정</li>
-                </ul>
-            </li>
-        </ul>
-        <p><b>기대효과:</b> <b style="color: #e74c3c;">환경가치 금전화</b> → 농가 추가 수익 창출</p>
+    <div style="background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%); 
+                border: 3px solid #16a085; border-radius: 15px; padding: 20px; 
+                box-shadow: 0 6px 15px rgba(22, 160, 133, 0.4);">
+        <h5 style="color: #117a65; font-size: 1.4rem; margin-bottom: 12px;">
+            🌍 3-2. 탄소 크레딧 판매 연계 프리미엄화 ⭐
+        </h5>
     </div>
     """, unsafe_allow_html=True)
+    
+    st.markdown("**정책 주체:** 환경부, 농림축산식품부")
+    
+    # 핵심 내용 강조
+    st.info("""
+    🎯 **핵심: CSA 농가 탄소 감축량 크레딧 인정**
+    
+    • 온실가스 배출권 거래제 연계  
+    • 10a당 연간 0.5톤 CO₂ 감축 인증  
+    • **크레딧 가격: 톤당 2만원 (연간 10만원/10a)**
+    """)
+    
+    st.markdown("**세부 내용:**")
+    st.markdown("""
+    **1) 기업 ESG 구매 프로그램**
+    - 대기업 CSR 활동으로 CSA 농산물 구매 유도
+    - 탄소중립 달성 실적 인정
+    """)
+    
+    st.success("💡 **기대효과:** 환경가치 금전화 → 농가 추가 수익 창출")
 
 with policy3_col3:
+    # 그린카드 강조 박스
     st.markdown("""
-    <div class="greencard-highlight">
-        <h5>💳 3-3. 그린카드 제도 확대 ⭐ (핵심 정책)</h5>
-        <p><b>정책 주체:</b> 환경부, 금융위원회</p>
-        <p><b>현황:</b> 기존 친환경 제품 구매 시 최대 3,000원/월 소득공제</p>
-        
-        <div class="greencard-benefit">
-            <p><b style="color: #e74c3c; font-size: 1.2rem;">🎯 확대안: CSA 인증 농산물 구매 금액의 15% 포인트 즉시 적립</b></p>
-            <p>• 2만원 구매 → <b style="color: #27ae60;">3,000원 포인트</b> (다음 구매 시 사용)<br>
-            • 4만원 구매 → <b style="color: #27ae60;">6,000원 포인트</b><br>
-            • <b>월 한도 없음</b> (기존 3,000원 한도 폐지)</p>
-        </div>
-        
-        <p><b>세부 내용:</b></p>
-        <ul>
-            <li><b>대형마트·온라인몰 CSA 농산물 별도 코너 운영</b>
-                <ul>
-                    <li>CSA 인증마크 부착 의무화</li>
-                    <li>매장 내 홍보물 제작 지원</li>
-                    <li>온라인 검색 필터에 "CSA 인증" 추가</li>
-                    <li>그린카드 결제 시 자동 포인트 적립</li>
-                </ul>
-            </li>
-            <li><b>소비자 캠페인 "15% 돌려받고 지구도 살리고"</b>
-                <ul>
-                    <li>TV·온라인 광고 집행 (연간 10억원)</li>
-                    <li>그린카드 발급 캠페인 (목표 100만장)</li>
-                    <li>CSA 인증 농산물 인지도 제고</li>
-                </ul>
-            </li>
-        </ul>
-        <p><b style="color: #27ae60; font-size: 1.15rem;">💡 기대효과: 소비자 가격 부담 15% 완화 → B2C 시장 활성화 → 농가 판로 확대</b></p>
+    <div style="background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%); 
+                border: 3px solid #27ae60; border-radius: 15px; padding: 20px; 
+                box-shadow: 0 6px 15px rgba(39, 174, 96, 0.4);">
+        <h5 style="color: #27ae60; font-size: 1.4rem; margin-bottom: 12px;">
+            💳 3-3. 그린카드 제도 확대 ⭐ (핵심 정책)
+        </h5>
     </div>
     """, unsafe_allow_html=True)
+    
+    st.markdown("**정책 주체:** 환경부, 금융위원회")
+    st.markdown("**현황:** 기존 친환경 제품 구매 시 최대 3,000원/월 소득공제")
+    
+    # 확대안 강조
+    st.success("""
+    🎯 **확대안: CSA 인증 농산물 구매 금액의 15% 포인트 즉시 적립**
+    
+    • 2만원 구매 → **3,000원 포인트** (다음 구매 시 사용)  
+    • 4만원 구매 → **6,000원 포인트**  
+    • **월 한도 없음** (기존 3,000원 한도 폐지)
+    """)
+    
+    st.markdown("**세부 내용:**")
+    st.markdown("""
+    **1) 대형마트·온라인몰 CSA 농산물 별도 코너 운영**
+    - CSA 인증마크 부착 의무화
+    - 매장 내 홍보물 제작 지원
+    - 온라인 검색 필터에 "CSA 인증" 추가
+    - 그린카드 결제 시 자동 포인트 적립
+    
+    **2) 소비자 캠페인 "15% 돌려받고 지구도 살리고"**
+    - TV·온라인 광고 집행 (연간 10억원)
+    - 그린카드 발급 캠페인 (목표 100만장)
+    - CSA 인증 농산물 인지도 제고
+    """)
+    
+    st.info("💡 **기대효과:** 소비자 가격 부담 15% 완화 → B2C 시장 활성화 → 농가 판로 확대")
 
 # 그린카드 제도 효과 추가 설명
 st.markdown("---")
